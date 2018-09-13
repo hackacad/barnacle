@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ALL_DIRS=$(find ${CURRENT_DIR} -name Dockerfile -printf '%h\n' | for i in `xargs`; do basename $i; done)

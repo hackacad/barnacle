@@ -5,6 +5,9 @@ LOCAL_FILEROOTS="/srv/salt"
 if [[ -e /usr/bin/sw_vers && `/usr/bin/sw_vers -productName` == "Mac OS X" ]]; then
     SUDO=""
     DOCKER="/usr/local/bin/docker"
+elif [[ -e /bin/freebsd-version ]]; then
+    SUDO="sudo"
+    DOCKER="/usr/local/bin/docker"
 else
     SUDO="sudo"
     DOCKER="/usr/bin/docker"
